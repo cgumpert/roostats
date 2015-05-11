@@ -15,8 +15,6 @@ HLIST = $(wildcard $(INCDIR)/*.h)
 CPPLIST = $(filter-out $(DICTCPP),$(wildcard $(SRCDIR)/*.cxx))
 OLIST = $(patsubst %.cxx,%.o,$(notdir $(CPPLIST)))
 
-#CXXFLAGS += -I./ -Iinclude/ -Wall -Wno-overloaded-virtual -Wno-unused -pthread -Wno-deprecated-declarations -m64 -I$(shell root-config --incdir) -fPIC -DCG_EXPERIMENTAL
-#CXX11    += --std=c++11
 CXXFLAGS += -I./ -Iinclude/ -fPIC -DCG_EXPERIMENTAL $(shell root-config --cflags)
 
 LIBS     += $(shell root-config --libs) -lRooFitCore -lRooFit -lRooStats 
