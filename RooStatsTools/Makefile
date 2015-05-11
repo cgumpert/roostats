@@ -59,3 +59,5 @@ clean:
 	rm -f $(DICTHEAD) $(DICTCPP)
 	rm -rf $(OBJDIR)
 	rm -f $(BINDIR)/*
+	rm -f $(SRCDIR)/*pcm
+
