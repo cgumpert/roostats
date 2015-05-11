@@ -69,6 +69,9 @@ void RunGaussLimits(const double xMin,const double xMax,const unsigned int iPoin
   HypoTestInverterResult* pFCResult = 0;
   for(unsigned int i = 0; i <= iPoints; ++i)
   {
+    std::cout << "\rstart " << i+1 << " of " << iPoints+1 << " points";
+    std::cout.flush();
+    
     // create dummy dataset
     xObs = xMin + i * (xMax - xMin)/iPoints;
     pData = new RooDataSet("data","data",rObservables);
@@ -112,6 +115,7 @@ void RunGaussLimits(const double xMin,const double xMax,const unsigned int iPoin
     // clean up
     delete pData;
   }
+  std::cout << std::endl;
 
   // beautfiy graphs
   grLogL_up->SetLineWidth(2);
