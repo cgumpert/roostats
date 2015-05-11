@@ -1,0 +1,35 @@
+Author: Christian Gumpert <cgumpert@cern.ch>
+
+This package contains some helper functions to perform statistical data interpretation using
+the RooStats package which is part of the ROOT framework (root.cern.ch).
+
+1. Requirements
+===============
+
+This package was tested with ROOT Version v6.02.08 with the roofit feature enabled.
+
+2. Installation/Compilation
+===========================
+
+After having setup ROOT, the package can be compiled by invoking
+
+> make
+
+on the command line. As a result, the lib/ directory will be created containing the shared library.
+In addition, a test executable is created in the directory bin/.
+
+3. Usage
+========
+
+Before you can use the shared library/run the test porgramme, you need to include the lib/
+directory into the environment variable LD_LIBRARY_PATH. This can be achieved by sourcing
+the setup script
+
+> source RooStatsToolsenv.sh
+
+Afterwards, you can run the test programme. By calling
+
+> ./bin/GaussLimitPlot --help
+
+you will get a list of the avaiable options. This programme calculates the upper limits/confidence
+interval for the mean (restricted to be >= 0) from a normal distributed random variable.
